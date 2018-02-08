@@ -30,6 +30,23 @@
 
 		<div class="sk-rotating-plane"></div>
 
+    </div>
+    	<!-- =========================
+     NAVIGATION LINKS     
+============================== -->
+    <div class="navbar navbar-fixed-top custom-navbar" role="navigation">
+		<div class="container">
+
+			<!-- navbar header -->
+			<div class="navbar-header">
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon icon-bar"></span>
+					<span class="icon icon-bar"></span>
+					<span class="icon icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand">TMTS</a>
+			</div>
+            </div>
 	</div>
 	<!-- =========================
    REGISTER SECTION   
