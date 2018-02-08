@@ -240,18 +240,69 @@
 
 				<div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="0.6s">
 					<h2>Register Here</h2>
-					<h3>Afin d'accéder au service de covoiturage, nous vous invitons à créer un compte.</h3>
-					<p>Il vous permettra de vous enregistrer sur les covoiturages disponibles ou de proposer votre covoiturage.</p>
+					<h3>Afin d'accéder au service des conducteurs, nous vous invitons à remplir vos informations.</h3>
+					<p>Il vous permettra de placer votre lieu de départ.</p>
 				</div>
 
 				<div class="wow fadeInUp col-md-5 col-sm-5" data-wow-delay="1s">
-					<form action="/register.php" method"get">
+					<form action="/register.php" method "get">
 						<input name="firstname" type="text" class="form-control" id="firstname" placeholder="First Name">
 						<input name="lastname" type="text" class="form-control" id="lastname" placeholder="Last Name">
 						<input name="phone" type="telephone" class="form-control" id="phone" placeholder="Phone Number">
 						<input name="email" type="email" class="form-control" id="email" placeholder="Email Address">
+
+						<input name="lundi" type=text class="form-control" id="lundi" list=browsers placeholder="Lundi">
+						<datalist id=browsers>
+							<option> 08h00
+							<option> 09h30
+							<option> 11h00
+							<option> 13h30
+							<option> 15h00
+							<option> 16h30
+							<option> 18h00
+						</datalist>
+						<input name="mardi" type=text class="form-control" id="mardi" list=browsers placeholder="Mardi">
+						<datalist id=browsers>
+							<option> 08h00
+							<option> 09h30
+							<option> 11h00
+							<option> 13h30
+							<option> 15h00
+							<option> 16h30
+							<option> 18h00
+						</datalist>
+						<input name="mercredi" type=text class="form-control" id="mercredi" list=browsers placeholder="Mercredi">
+						<datalist id=browsers>
+							<option> 08h00
+							<option> 09h30
+							<option> 11h00
+							<option> 13h30
+							<option> 15h00
+							<option> 16h30
+							<option> 18h00
+						</datalist>
+						<input name="Jeudi" type=text class="form-control" id="Jeudi" list=browsers placeholder="Jeudi">
+						<datalist id=browsers>
+							<option> 08h00
+							<option> 09h30
+							<option> 11h00
+							<option> 13h30
+							<option> 15h00
+							<option> 16h30
+							<option> 18h00
+						</datalist>
+						<input name="Vendredi" type=text class="form-control" id="Vendredi" list=browsers placeholder="Vendredi">
+						<datalist id=browsers>
+							<option> 08h00
+							<option> 09h30
+							<option> 11h00
+							<option> 13h30
+							<option> 15h00
+							<option> 16h30
+							<option> 18h00
+						</datalist>
 						<div class="col-md-offset-6 col-md-6 col-sm-offset-1 col-sm-10">
-							<input name="submit" type="submit" class="form-control" id="submit" value="REGISTER">
+							<input name="submit" type="submit" class="form-control" id="submit" value="LET'S GO">
 						</div>
 					</form>
 				</div>
@@ -435,20 +486,20 @@
      SCRIPTS   
 ============================== -->
 	<script type='application/javascript'>
-	
+
 		var hash = Date.now()
 
-		;[
-			"js/jquery.js",
-			"js/bootstrap.min.js",
-			"js/jquery.parallax.js",
-			"js/owl.carousel.min.js",
-			"js/smoothscroll.js",
-			"js/wow.min.js",
-			"js/custom.js"
-		].forEach(function (path) {
-			document.write('<scr' + 'ipt src="' + path + '?' + hash + '"></scr' + 'ipt>')
-		})
+			;[
+				"js/jquery.js",
+				"js/bootstrap.min.js",
+				"js/jquery.parallax.js",
+				"js/owl.carousel.min.js",
+				"js/smoothscroll.js",
+				"js/wow.min.js",
+				"js/custom.js"
+			].forEach(function (path) {
+				document.write('<scr' + 'ipt src="' + path + '?' + hash + '"></scr' + 'ipt>')
+			})
 
 	</script>
 
