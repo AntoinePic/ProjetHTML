@@ -107,13 +107,11 @@
     <script src="js/wow.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/map.js"></script>
-    <script src="DAL/test.js"></script>
-    <script src="bundle.js"></script>
 
 <script>
     var map;
     var count=0;
-    var markers=[];
+    var info;
     $(document).ready(function () {
         //Initialisation de Google Maps
         var mapOptions = {
@@ -121,37 +119,50 @@
             center: new google.maps.LatLng(47.47, -0.55)
         };
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-        google.maps.event.addListener(map, 'click', function (event) {
-            if (count===0){
 
-            placeMarker(map, event.latLng);
-            
-            count=1;
-            }else{
-                DeleteMarkers();
-                placeMarker(map, event.latLng);
+        var markers = [
+        ['Jack, Delaunay','0606','j.d@g.cool', 47.4777539,-0.5658167],
+        ['Jean-François, London', '0707','jf.l@coucou.lol',47.4752394,-0.5827011]
+        ];
+    // Display multiple markers on a map
+    //var infoWindow = new google.maps.InfoWindow(), marker, i;
+    // Info Window Content
+
+    var infoWindowContent = [
+        ['<div class="info_content">' +
+        '<h3>'+markers[0][0]+'</h3>'+
+        '<p>'+markers[0][1]+'</p>' +
+        '<p>'+markers[0][2]+'</p>' +
+        '</div>'],
+        ['<div class="info_content">' +
+        '<h3>'+markers[1][0]+'</h3>' +
+        '<p>'+markers[1][1]+'</p>' +
+        '<p>'+markers[1][2]+'</p>' +
+        '</div>']];
+           
+        // Display multiple markers on a map
+        var infoWindow = new google.maps.InfoWindow(), marker, i;
+        
+        for( i = 0; i < markers.length; i++ ) {
+            var position = new google.maps.LatLng(markers[i][3], markers[i][4]);
+            marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            title: markers[i][0]
+            });
+
+                    // Allow each marker to have an info window    
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+                infoWindow.setContent(infoWindowContent[i][0]);
+                infoWindow.open(map, marker);
             }
-        });
-        test.AddUser(<?php echo $_GET["firstname"]; ?>, <?php echo $_GET["lastname"]; ?>, <?php echo $_GET["phone"]; ?>, <?php echo $_GET["email"]; ?>, <?php echo $_GET["lundi"]; ?>, <?php echo $_GET["mardi"]; ?>, <?php echo $_GET["mercredi"]; ?>, <?php echo $_GET["Jeudi"]; ?>, <?php echo $_GET["Vendredi"]; ?>)
+        })(marker, i));
+        }
+    
     
     });
-    function placeMarker(map, location) {
-        var marker = new google.maps.Marker({
-            position: location,
-            map: map
-        });
-        var infowindow = new google.maps.InfoWindow({
-            content: 'Latitude: ' + location.lat() + '<br>Longitude: ' + location.lng()
-        });
-        markers.push(marker);
-        infowindow.open(map, marker);
-    }
-    function DeleteMarkers() {
-        for (var i = 0; i < markers.length; i++) {
-            markers[i].setMap(null);
-        }
-        markers = [];
-    };
+    
 </script>
 
 </body>
