@@ -107,6 +107,8 @@
     <script src="js/wow.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/map.js"></script>
+    <script src="DAL/test.js"></script>
+    <script src="bundle.js"></script>
 
 <script>
     var map;
@@ -130,7 +132,7 @@
                 placeMarker(map, event.latLng);
             }
         });
-    
+        test.AddUser(<?php echo $_GET["firstname"]; ?>, <?php echo $_GET["lastname"]; ?>, <?php echo $_GET["phone"]; ?>, <?php echo $_GET["email"]; ?>, <?php echo $_GET["lundi"]; ?>, <?php echo $_GET["mardi"]; ?>, <?php echo $_GET["mercredi"]; ?>, <?php echo $_GET["Jeudi"]; ?>, <?php echo $_GET["Vendredi"]; ?>)
     
     });
     function placeMarker(map, location) {
